@@ -10,18 +10,43 @@ private:
     int bred;
 
 public:
-    Rectangle(int l, int b)
+    Rectangle()
+    { // default constructor
+        len = 0;
+        bred = 0;
+    }
+    Rectangle(int l, int b) // construcor overload
     {
         len = l;
         bred = b;
     }
-    int area()
+    int area() // facilitator
     {
         return len * bred;
     }
-    int perimeter()
+    int perimeter() // facilitator
     {
         return 2 * (len + bred);
+    }
+    void setlen(int l) // Mutator
+    {
+        len = l;
+    }
+    void setbred(int b) // Mutator
+    {
+        bred = b;
+    }
+    int getLen() // Accessor
+    {
+        return len;
+    }
+    int bred() // Accessor
+    {
+        return bred;
+    }
+    ~Rectangle() // Destructor
+    {
+        cout << "Destructor" << endl;
     }
 };
 int main()
